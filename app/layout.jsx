@@ -1,17 +1,14 @@
-import { Lato as FontSans } from "next/font/google";
+import { Poppins } from "next/font/google";
 import { ToastContainer } from "react-toastify";
 import { cn } from "@/lib/utils";
 import "./globals.css";
+import Navbar from "./components/ui/navbar";
 
-const fontSans = FontSans({
-  subsets: ["latin"],
-  weight: ["100", "300", "400", "700", "900"],
-  variable: "--font-sans",
-});
+const poppins = Poppins({ weight: ["400", "500", "600", "700"], subsets: ["latin"] });
 
 export const metadata = {
-  title: "SellerPro",
-  description: "Seller Pro Website",
+  title: "Daviz.id",
+  description: "Visualize your Data",
 };
 
 export default function RootLayout({ children }) {
@@ -19,10 +16,11 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body
         className={cn(
-          "bg-background min-h-screen scroll-smooth font-sans antialiased",
-          fontSans.className
+          "min-h-screen scroll-smooth bg-background font-sans antialiased",
+          poppins.className
         )}
       >
+        <Navbar />
         {children}
         <ToastContainer
           autoClose={2000}
