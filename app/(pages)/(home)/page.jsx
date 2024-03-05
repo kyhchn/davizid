@@ -56,38 +56,38 @@ export default function Home() {
     },
     {
       order: 3,
-      title: "Data Management",
-      desc: "Manage data in a structured manner to facilitate data analysis and decision making",
+      title: "Semantic Layers",
+      desc: "The Semantic Layer is a virtual layer that sits between the physical data sources and the end-users. It acts as a bridge between the complex data structures of the underlying data sources and the simplified view of the data that end-users see. The semantic layer provides a logical representation of the data, making it easier for end-users to access and analyze data without needing to understand the underlying data structures.",
       image: FEATURE_3,
     },
     {
       order: 4,
-      title: "Data Integration",
-      desc: "Integrate data from various sources to facilitate data analysis and decision making",
+      title: "Mobile Access",
+      desc: "MicroStrategy Mobile is an interactive interface of the MicroStrategy Business Intelligence (BI) platform that enables mobile business users to harness the analytical power of MicroStrategy through their mobile devices.",
       image: FEATURE_4,
     },
     {
       order: 5,
-      title: "Data Security",
-      desc: "Secure data from unauthorized access and data breaches",
+      title: "Chapter & Page",
+      desc: "The Chapter and Page feature in MicroStrategy is a powerful innovation for dashboard management that enables the organization of analytical content in a more organized and systematic way. Within a single dashboard view, you can create multiple Chapters, each of which can contain multiple Pages. This is similar to the structure of a book, where each chapter discusses a specific aspect of the overall data story and each page details specific information within that chapter.\n\nThis feature facilitates navigation and comprehension of complex data by dividing information into more manageable and understandable segments. Users can easily navigate between chapters and pages to explore different aspects of the data, similar to scrolling through a table of contents in a well-structured report or presentation.",
       image: FEATURE_5,
     },
     {
       order: 6,
-      title: "Data Governance",
-      desc: "Manage data to ensure data quality, data integrity, and data availability",
+      title: "Artificial Intelligence",
+      desc: "Auto Answers is an AI-powered chatbot that provides fast and accurate responses to business intelligence analysis. Auto Answers acts as a personal data assistant, ensuring that users can optimize information within the organization.",
       image: FEATURE_6,
     },
     {
       order: 7,
-      title: "Data Privacy",
-      desc: "Manage data to ensure data privacy and data protection",
+      title: "Access to Many Data Sources",
+      desc: "The Access to Many Data Sources feature in MicroStrategy is a powerful and flexible data integration capability that allows users to connect to a wide range of data sources, both structured and unstructured, on-premises or in the cloud, SQL or NoSQL. MicroStrategy provides seamless connectivity to tools like Hadoop, Salesforce, Azure, and databases like MySQL and Oracle.\n\nThis feature supports real-time data integration, bringing together information from disparate sources to provide comprehensive and up-to-date insights. Users can easily combine data from CRM systems, ERPs, flat files, web services, and even social media, providing a 360-degree view of their business in a single analytics platform.",
       image: FEATURE_7,
     },
     {
       order: 8,
-      title: "Data Compliance",
-      desc: "Manage data to ensure data compliance with laws and regulations",
+      title: "HyperIntelligence",
+      desc: "HyperIntelligence makes it easy for analysts to create objects called cards. Cards are dynamic data representations that appear interactively when hovered over.",
       image: FEATURE_8,
     },
   ];
@@ -112,6 +112,31 @@ export default function Home() {
             </p>
           </div>
           <p className="text-black-base text-lg font-semibold">{dollarFormatter(value)}</p>
+        </div>
+      </div>
+    );
+  };
+  const featureListTile = ({ order, title, desc, image }) => {
+    return (
+      <div className={`flex items-stretch ${order % 2 == 0 ? "flex-row-reverse" : "flex-row"}`}>
+        <div className="relative min-h-72 w-[45%] overflow-visible">
+          <img
+            src={image}
+            alt={title}
+            className="w-[calc(100% + 20px) absolute left-0 top-0 -mr-10 w-full"
+          />
+        </div>
+        <div className="w-[10%] "></div>
+        <div className="w-[45%] flex-col justify-start">
+          <div className="flex w-full flex-row items-center">
+            <p className="text-daviz-red-500 text-2xl font-bold italic">{"0" + order}.</p>
+            <div className="w-3"></div>
+            <p className=" text-black-base text-xl font-medium">{title}</p>
+          </div>
+          <div className="w-6"></div>
+          <p className="text-black-base whitespace-pre-wrap text-justify text-base font-normal">
+            {desc}
+          </p>
         </div>
       </div>
     );
@@ -165,17 +190,17 @@ export default function Home() {
           />
         </div>
         {/* Our Feature */}
-        <div className="mt-60 flex justify-center px-28">
+        <div className="mt-60 flex flex-col items-center justify-center px-28">
           <div className="text-black-base inline-block w-auto border-b-8 border-red-500 text-center text-3xl font-semibold">
             Our Feature
           </div>
           <div className="h-32"></div>
-          <div className="flex flex-col px-40">
-            <div className="flex flex-row items-center">
-              <div className="flex-1"></div>
-              <div className="w-24"></div>
-              <div className="flex-1"></div>
-            </div>
+          <div className="flex w-full flex-col">
+            {featureList.map((feature, index) => (
+              <div key={index} className="mb-32 w-full">
+                {featureListTile(feature)}
+              </div>
+            ))}
           </div>
         </div>
       </div>
