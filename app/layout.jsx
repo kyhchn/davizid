@@ -2,6 +2,7 @@ import { Poppins } from "next/font/google";
 import { ToastContainer } from "react-toastify";
 import { cn } from "@/lib/utils";
 import "./globals.css";
+import Footer from "./components/ui/footer";
 import Navbar from "./components/ui/navbar";
 
 const poppins = Poppins({ weight: ["400", "500", "600", "700"], subsets: ["latin"] });
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
       >
         <Navbar />
         {children}
+        <Footer />
         <ToastContainer
           autoClose={2000}
           closeOnClick={true}

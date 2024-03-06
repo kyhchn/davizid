@@ -17,6 +17,8 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import {
+  CONTACT_BG,
+  CONTACT_ILLUST,
   DAVIZ_DESC,
   FEATURE_1,
   FEATURE_2,
@@ -131,6 +133,25 @@ export default function Home() {
         "Daviz Dashboard Management is an innovative service designed to provide intuitive and interactive data visualization solutions. Using the Daviz platform, we develop dashboards that are not only visually stunning, but also rich in analytical features. This service allows users to see and understand data in a more effective and efficient way.",
     },
   ];
+
+  const socialMediaList = [
+    {
+      name: "Email",
+      link: "mailto:alvinkn.dev@gmail.com",
+    },
+    {
+      name: "Whatsapp",
+      link: "https://wa.me/628972155433",
+    },
+    {
+      name: "LinkedIn",
+      link: "https://www.linkedin.com/in/alvinkn/",
+    },
+    {
+      name: "Instagram",
+      link: "https://www.instagram.com/aaalvinkn/",
+    },
+  ];
   const informationCard = ({ title, desc, growth, value }) => {
     const highlightColor = growth > 0 ? "#47CC45" : "red-500";
     return (
@@ -202,6 +223,18 @@ export default function Home() {
       </Accordion>
     );
   };
+
+  const socialLinker = ({ name, link }) => {
+    return (
+      <a
+        href={link}
+        target="_blank"
+        className="hover:scale105 hover text-opacity-90 transition-all hover:text-black-base hover:text-opacity-100"
+      >
+        {name}
+      </a>
+    );
+  };
   return (
     <main>
       <div className="h-12"></div>
@@ -270,10 +303,12 @@ export default function Home() {
           <h2 className="mb-16 text-center text-3xl font-semibold text-black-base">Our Service</h2>
           {dropDownBuilder({ dropdownList: dropdownData })}
         </div>
+        <div className="h-44"></div>
         {/* Our Portfolio */}
         <div className="flex w-full flex-col items-center justify-start">
-          <div>
+          <div className="text-center">
             <h2 className="text-3xl font-semibold text-black">Our Portfolio</h2>
+            <div className="h-6"></div>
             <p className="text-xl font-normal text-daviz-grey-400">
               Our recent works about data visualization
             </p>
@@ -317,9 +352,76 @@ export default function Home() {
           </Button>
         </div>
         {/* Contact Us */}
-        <div className="my-44 flex flex-row rounded-xl"></div>
+        <div className="my-44 flex flex-row items-stretch rounded-xl">
+          <div className="bg-contact_bg flex flex-1 flex-row items-center justify-start rounded-l-xl bg-cover p-10">
+            <Image src={CONTACT_ILLUST} width={177} height={177} />
+            <div className="w-12"></div>
+            <div className="flex flex-col">
+              <p className="text-3xl font-semibold text-white">Interest in our Product</p>
+              <div className="h-3"></div>
+              <p className="text-xl font-normal text-white text-opacity-70">
+                Contact us through the contact <br />
+                information on the side
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-col justify-center rounded-r-xl border-[0.4px] border-l-0 px-20 py-12">
+            <p className="text-lg font-medium text-black-base">Contact</p>
+            <div className="h-4"></div>
+            <div className="flex flex-col gap-2 text-base font-medium text-black-base text-opacity-60">
+              {socialMediaList.map((social, index) => (
+                <div key={index}>{socialLinker(social)}</div>
+              ))}
+            </div>
+          </div>
+        </div>
+        {/* Article */}
+        <div className="flex w-full flex-col items-center justify-start">
+          <div className="text-center">
+            <h2 className="text-3xl font-semibold text-black">Article</h2>
+            <div className="h-6"></div>
+            <p className="text-xl font-normal text-daviz-grey-400">Handpicked just for you</p>
+          </div>
+          <div className="h-24"></div>
+          <Carousel className="w-full px-24">
+            <CarouselContent className="-ml-12">
+              {Array.from({ length: 5 }).map((_, index) => (
+                <CarouselItem key={index} className="basis-1/3 pl-12">
+                  <div className="flex flex-col items-center justify-start">
+                    <Image alt={`item ${index}`} src={PORTFOLIO} width={340} height={240} />
+                    <div className="h-6"></div>
+                    <div className="flex flex-col items-start justify-start gap-3">
+                      <p className="text-base font-normal text-black-base">Health . 202</p>
+                      <p className="text-xl font-medium text-black-base">
+                        Dashboard Covid-19 Case in Indonesia
+                      </p>
+                      <div className="flex flex-row gap-8">
+                        <div className="flex items-center">
+                          <Eye className="text-daviz-grey-400" />
+                          <div className="w-2"></div>
+                          <p className="text-base font-normal text-daviz-grey-400">141</p>
+                        </div>
+                        <div className="flex items-center">
+                          <Eye className="text-daviz-grey-400" />
+                          <div className="w-2"></div>
+                          <p className="text-base font-normal text-daviz-grey-400">141</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+          <div className="h-20"></div>
+          <Button>
+            <p className="text-base font-medium text-white">View More</p>
+          </Button>
+        </div>
       </div>
-      <div className="h-12"></div>
+      <div className="h-44"></div>
     </main>
   );
 }

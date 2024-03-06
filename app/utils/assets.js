@@ -11,4 +11,7 @@ export const FEATURE_6 = "/assets/feature-6.png"
 export const FEATURE_7 = "/assets/feature-7.png"
 export const FEATURE_8 = "/assets/feature-8.png"
 export const PORTFOLIO = "/assets/portfolio.png"
+export const CONTACT_BG = "/assets/contact-bg.jpg"
+export const CONTACT_ILLUST = "/assets/contact-illust.png"
+export const DAVIZ_FOOTER = "/assets/daviz-footer.png"
 export const DAVIZ_DESC = "Daviz is a product of PT. Infonika Parasa was developed using tools from Microstrategy, a company with more than 35 years of experience in the field of Business Intelligence (BI), mobile software & cloud based services. PT. Infonika Parasa itself has been creating and developing various Information Technology (IT) products for more than 20 years for the needs of Government Institutions, BUMN, Educational Institutions and National Private Companies.\n\nBy using Daviz, organizations or companies can visualize data in the form of a display that is easy to analyze and facilitates faster and more accurate decision making";

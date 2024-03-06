@@ -21,6 +21,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         login: "url('/assets/images/bg-login.png')",
+        contact_bg: `url('/assets/contact-bg.jpg')`
       },
       fontFamily: {
         sans: ["Lato", ...fontFamily.sans],
