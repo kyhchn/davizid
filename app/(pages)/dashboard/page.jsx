@@ -5,12 +5,14 @@ import { TableauViz } from "@tableau/embedding-api";
 
 export default function Page() {
   useEffect(() => {
-    const viz = new TableauViz();
+    if (typeof window !== "undefined") {
+      const viz = new TableauViz();
 
-    viz.src = "https://public.tableau.com/views/City_AQ_Viewer_2023/EuropeanCityRanking";
-    viz.toolbar = "hidden";
+      viz.src = "https://public.tableau.com/views/City_AQ_Viewer_2023/EuropeanCityRanking";
+      viz.toolbar = "hidden";
 
-    document.getElementById("tableauViz").appendChild(viz);
+      document.getElementById("tableauViz").appendChild(viz);
+    }
   }, []);
   return (
     <main>
