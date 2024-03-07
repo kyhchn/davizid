@@ -3,7 +3,7 @@
 import React, { useEffect } from "react";
 import { TableauViz } from "@tableau/embedding-api";
 
-export default function page() {
+export default function Page() {
   useEffect(() => {
     const viz = new TableauViz();
 
