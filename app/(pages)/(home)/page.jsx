@@ -8,7 +8,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -353,7 +352,7 @@ export default function Home() {
         </div>
         {/* Contact Us */}
         <div className="my-44 flex flex-row items-stretch rounded-xl">
-          <div className="bg-contact_bg flex flex-1 flex-row items-center justify-start rounded-l-xl bg-cover p-10">
+          <div className="flex flex-1 flex-row items-center justify-start rounded-l-xl bg-contact_bg bg-cover p-10">
             <Image src={CONTACT_ILLUST} width={177} height={177} />
             <div className="w-12"></div>
             <div className="flex flex-col">
