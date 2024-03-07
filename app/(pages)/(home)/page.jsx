@@ -207,7 +207,7 @@ export default function Home() {
     return (
       <Accordion type="single" collapsible className="w-full">
         {dropdownList.map((dropdown, index) => (
-          <AccordionItem value={`item-${index + 1}`}>
+          <AccordionItem value={`item-${index + 1}`} key={index}>
             <AccordionTrigger>
               <div className="flex flex-row items-center justify-center underline-offset-0">
                 <p className="text-lg font-normal text-daviz-grey-400">
