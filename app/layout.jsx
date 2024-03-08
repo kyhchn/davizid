@@ -12,13 +12,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body
-        className={cn(
-          "min-h-screen scroll-smooth bg-background font-sans antialiased",
-          poppins.className
-        )}
-      >
+    <html lang="en" className="!scroll-smooth">
+      <body className={cn("min-h-screen bg-background font-sans antialiased", poppins.className)}>
         {children}
         <ToastContainer
           autoClose={2000}

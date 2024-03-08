@@ -7,7 +7,9 @@ export default function Navbar() {
   const listItem = ["Profile", "Feature", "Service", "Dashboard", "Contact"];
   return (
     <nav className="sticky left-0 top-0 z-10 flex h-36 items-center justify-between bg-white px-16 shadow-md">
-      <Image className="flex" src={DAVIZ_LOGO} alt="logo" width={112} height={50} />
+      <Link href={"/"}>
+        <Image className="flex" src={DAVIZ_LOGO} alt="logo" width={112} height={50} />
+      </Link>
       <ul className="flex gap-8 text-base font-medium text-daviz-grey-500">
         {listItem.map(item => (
           <li key={item}>{navItem(item)}</li>
@@ -18,7 +20,10 @@ export default function Navbar() {
 }
 function navItem(label) {
   return (
-    <Link href={`/${label.toLowerCase}`} className="transition-all duration-300 hover:text-red-500">
+    <Link
+      href={`/#${label.toString().toLowerCase()}`}
+      className="transition-all duration-300 hover:text-red-500"
+    >
       {label}
     </Link>
   );

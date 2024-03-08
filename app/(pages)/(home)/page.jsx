@@ -1,10 +1,10 @@
 import * as React from "react";
-import CarouselSection from "./carouselSection";
-import ContactUs from "./contactUs";
-import Description from "./description";
-import Jumbotron from "./jumbotron";
-import OurFeature from "./ourFeature";
-import OurService from "./ourService";
+import CarouselSection from "../../components/unique/home/carouselSection";
+import ContactUs from "../../components/unique/home/contactUs";
+import Description from "../../components/unique/home/description";
+import Jumbotron from "../../components/unique/home/jumbotron";
+import OurFeature from "../../components/unique/home/ourFeature";
+import OurService from "../../components/unique/home/ourService";
 
 export default function Home() {
   return (
@@ -13,17 +13,27 @@ export default function Home() {
         {/* Jumbotron */}
         <Jumbotron />
         {/* Description */}
-        <Description />
+        <div id="profile">
+          <Description />
+        </div>
         {/* Our Feature */}
-        <OurFeature />
+        <div id="feature">
+          <OurFeature />
+        </div>
         <div className="h-20"></div>
         {/*Our Service */}
-        <OurService />
+        <div id="service">
+          <OurService />
+        </div>
         <div className="h-44"></div>
         {/* Our Portfolio */}
-        <CarouselSection type={"portfolio"} />
+        <div id="dashboard">
+          <CarouselSection type={"portfolio"} />
+        </div>
         {/* Contact Us */}
-        <ContactUs />
+        <div id="contact">
+          <ContactUs />
+        </div>
         {/* Article */}
         <CarouselSection type={"article"} />
       </div>
