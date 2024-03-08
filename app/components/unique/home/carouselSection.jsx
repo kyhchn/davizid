@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
   Carousel,
@@ -11,7 +12,7 @@ import ItemCard from "@/components/ui/itemCard";
 import { PORTFOLIO } from "@/utils/assets";
 
 export default function CarouselSection({ type }) {
-  const title = type === "portfoio" ? "Our Portfolio" : "Article";
+  const title = type === "portfolio" ? "Our Portfolio" : "Article";
   const subtitle =
     type === "portfoio" ? "Our recent works about data visualization" : "Handpicked Just for You";
   return (
@@ -41,9 +42,11 @@ export default function CarouselSection({ type }) {
         <CarouselNext />
       </Carousel>
       <div className="h-20"></div>
-      <Button>
-        <p className="text-base font-medium text-white">View More</p>
-      </Button>
+      <Link href={`/${type}`}>
+        <Button>
+          <p className="text-base font-medium text-white">View More</p>
+        </Button>
+      </Link>
     </div>
   );
 }
