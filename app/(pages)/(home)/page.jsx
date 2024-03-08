@@ -1,14 +1,11 @@
 import * as React from "react";
-import Image from "next/image";
-import Marquee from "react-fast-marquee";
 import CarouselSection from "@/components/sections/home/carouselSection";
+import ContactUs from "@/components/sections/home/contactUs";
+import Description from "@/components/sections/home/description";
+import Jumbotron from "@/components/sections/home/jumbotron";
+import OurFeature from "@/components/sections/home/ourFeature";
 import OurPartner from "@/components/sections/home/ourPartner";
-import ContactUs from "@/components/unique/home/contactUs";
-import Description from "@/components/unique/home/description";
-import Jumbotron from "@/components/unique/home/jumbotron";
-import OurFeature from "@/components/unique/home/ourFeature";
-import OurService from "@/components/unique/home/ourService";
-import OurPartner from "@/components/sections/home/ourPartner";
+import OurService from "@/components/sections/home/ourService";
 
 export default function Home() {
   return (
