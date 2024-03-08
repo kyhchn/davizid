@@ -13,7 +13,13 @@ module.exports = {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: {
+        DEFAULT: '2rem',
+        sm: '2rem',
+        lg: '4rem',
+        xl: '5rem',
+        '2xl': '6rem',
+      },
       screens: {
         "2xl": "1400px",
       },
@@ -21,7 +27,8 @@ module.exports = {
     extend: {
       backgroundImage: {
         login: "url('/assets/images/bg-login.png')",
-        contact_bg: `url('/assets/contact-bg.jpg')`
+        contact_bg: `url('/assets/contact-bg.jpg')`,
+        filler_bg: `url('/assets/filler-bg.jpg')`,
       },
       fontFamily: {
         sans: ["Lato", ...fontFamily.sans],
